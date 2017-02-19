@@ -91,3 +91,4 @@ ENV/
 .idea/
 __pycache__/
 api_key.txt
+full_vacancies.plat
