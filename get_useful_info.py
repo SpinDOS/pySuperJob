@@ -19,7 +19,7 @@ if __name__ == '__main__':
     if not os.path.exists(input_filename):
         print("Передайте путь к файлу базы данных с вакансиями из superjob api "
               "в качестве параметра командной стороки. "
-              "Например: python get_useful_info.py full_vacancies.plat <out_db_filename")
+              "Например: python get_useful_info.py full_vacancies.plat <out_db_filename>")
         sys.exit(2)
 
     full_vacancies = db_helpers.get_object_from_file(input_filename)
