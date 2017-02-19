@@ -7,7 +7,6 @@ def get_useful_info(vacancy):
     result = {}
     result['profession'] = vacancy['profession']
     result['candidat'] = vacancy['candidat']
-    result['agreement'] = vacancy['agreement']
     result['payment_from'] = vacancy['payment_from']
     result['payment_to'] = vacancy['payment_to']
     return result
