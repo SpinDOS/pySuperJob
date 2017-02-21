@@ -7,7 +7,8 @@ def get_moscow_programmers():
     catalogue_id = 48 # id каталога "Разработка, программирование"
     town_id = 4 # id города Москва
     vacancies_count = 100 # api запрещает запрашивать больше 100 вакансий
-    params={'town': town_id, 'catalogues': catalogue_id, 'count': vacancies_count, 'keyword': 'Программист'}
+    keyword = 'Программист'
+    params={'town': town_id, 'catalogues': catalogue_id, 'count': vacancies_count, 'keyword': keyword}
     return make_superjob_request('vacancies/', params)
 
 
