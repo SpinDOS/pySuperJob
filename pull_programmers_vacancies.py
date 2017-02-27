@@ -26,6 +26,6 @@ if __name__ == '__main__':
     response = get_moscow_programmers()
     check_response_for_error(response)
     vacancies = response['objects']
-    out_filename = sys.argv[1] if len(sys.argv) == 2 else 'full_vacancies.plat'
+    out_filename = sys.argv[1] if len(sys.argv) == 2 else 'full_vacancies.json'
     db_helpers.save_object_to_file(vacancies, out_filename)
     print("Done")

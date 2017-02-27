@@ -74,11 +74,11 @@ def print_statistics(statistics):
 
 if __name__ == '__main__':
 
-    input_filename = sys.argv[1] if len(sys.argv) >= 2 else 'informative_vacancies.plat'
+    input_filename = sys.argv[1] if len(sys.argv) >= 2 else 'informative_vacancies.json'
     if not os.path.exists(input_filename):
         print("Передайте путь к файлу базы данных с обработанными вакансиями из superjob api "
               "в качестве параметра командной стороки. "
-              "Например: python get_languages_statistics.py informative_vacancies.plat <out_db_filename>")
+              "Например: python get_languages_statistics.py informative_vacancies.json <out_db_filename>")
         sys.exit(2)
 
     informative_vacancies = db_helpers.get_object_from_file(input_filename)

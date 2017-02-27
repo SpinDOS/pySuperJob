@@ -91,5 +91,5 @@ ENV/
 .idea/
 __pycache__/
 api_key.txt
-full_vacancies.plat
-informative_vacancies.plat
+full_vacancies.json
+informative_vacancies.json
