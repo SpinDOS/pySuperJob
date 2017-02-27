@@ -12,19 +12,18 @@ def get_moscow_programmers():
     return make_superjob_request('vacancies/', params)
 
 
-def print_and_exit_on_response_error(response):
-    error = response.get('error', None)
-    if error:
-        if error['code'] == 400:
-            print('Неверный ключ api. Установите его с помощью переменной окружения SUPERJOB_API_KEY')
-        else:
-            print("Неизвестная ошибка: " + str(error))
-        sys.exit(1)
+def print_response_error(error):
+    if error['code'] == 400:
+        print('Неверный ключ api. Установите его с помощью переменной окружения SUPERJOB_API_KEY')
+    else:
+        print("Неизвестная ошибка: " + str(error))
 
 
 if __name__ == '__main__':
     response = get_moscow_programmers()
-    print_and_exit_on_response_error(response)
+    if 'error' in response:
+        print_response_error(response['error'])
+        sys.exit(1)
     vacancies = response['objects']
     out_filename = sys.argv[1] if len(sys.argv) == 2 else 'full_vacancies.json'
     db_helpers.save_object_to_file(vacancies, out_filename)
