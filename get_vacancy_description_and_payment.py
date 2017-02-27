@@ -5,10 +5,10 @@ import sys
 
 def get_vacancy_description_and_payment(vacancy):
     result = {}
-    result['profession'] = vacancy['profession']
-    result['candidat'] = vacancy['candidat']
-    result['payment_from'] = vacancy['payment_from']
-    result['payment_to'] = vacancy['payment_to']
+    result['profession'] = vacancy['profession'] or ''
+    result['candidat'] = vacancy['candidat'] or ''
+    result['payment_from'] = vacancy['payment_from'] or 0
+    result['payment_to'] = vacancy['payment_to'] or 0
     return result
 
 
